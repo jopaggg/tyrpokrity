@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://eiuk1tpbvr28"
+path="res://.godot/imported/footstep on concrete 1.wav-73b25d4034e979281db248c4c486ee44.sample"
+
+[deps]
+
+source_file="res://ассеты/аудио/footstep on concrete 1.wav"
+dest_files=["res://.godot/imported/footstep on concrete 1.wav-73b25d4034e979281db248c4c486ee44.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq8o2m0ib1ymf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dfjbj"]
+albedo_color = Color(0.277528, 0.277528, 0.277528, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7rpwp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jtoyr"]
+
+[node name="тестовый полигон" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(39.9498, 0, 0, 0, 0.124905, 0, 0, 0, 27.9887, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_dfjbj")
+mesh = SubResource("BoxMesh_7rpwp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D"]
+shape = SubResource("BoxShape3D_jtoyr")
