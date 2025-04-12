@@ -1,3 +1,3 @@
 extends Control
 func _ready() -> void:
-	print("привит")
+	print("никита иди в попку")
