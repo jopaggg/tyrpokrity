@@ -1,0 +1,39 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="тур по криту V1"
+run/main_scene="uid://dpow6il4jwxl8"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/post_processing/plugin.cfg", "res://addons/script-ide/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "red",
+"res://tyrpokrityv1/": "blue",
+"res://ассеты/": "teal",
+"res://скрипты/": "purple",
+"res://сцены/": "pink"
+}
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
