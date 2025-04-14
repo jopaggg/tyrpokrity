@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dmioc7g21ebjd"]
+
+[ext_resource type="Shader" uid="uid://dipgpylncp76" path="res://ассеты/шейдеры/круг.gdshader" id="1_igkyo"]
+
+[resource]
+shader = ExtResource("1_igkyo")

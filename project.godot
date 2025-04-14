@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="тур по криту V1"
-run/main_scene="uid://dpow6il4jwxl8"
+run/main_scene="uid://ccvtwm1m4bttr"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 
 [editor]

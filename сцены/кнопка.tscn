@@ -1,0 +1,166 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccvtwm1m4bttr"]
+
+[ext_resource type="Script" uid="uid://dv7ca2a5epgrg" path="res://кнопка.gd" id="1_fe60t"]
+[ext_resource type="AnimationLibrary" uid="uid://bwhqqsvm4rfee" path="res://сцены/ButtonVideo.animations.tres" id="1_w1tsx"]
+[ext_resource type="VideoStream" uid="uid://ioq4sf314e1i" path="res://фон.ogv" id="2_blvvq"]
+[ext_resource type="Material" uid="uid://dmioc7g21ebjd" path="res://ассеты/шейдеры/круг.tres" id="2_kctw6"]
+
+[sub_resource type="Animation" id="Animation_fe60t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VideoStreamPlayer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VideoStreamPlayer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VideoStreamPlayer:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.157508, 0.144538)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.153832, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kctw6"]
+_data = {
+&"RESET": SubResource("Animation_fe60t")
+}
+
+[node name="ButtonRoot" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.0031)
+script = ExtResource("1_fe60t")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+visible = false
+material = ExtResource("2_kctw6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -125.0
+offset_top = -1.99385
+offset_right = -125.0
+offset_bottom = -1.99384
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.157508, 0.144538)
+pivot_offset = Vector2(583.583, 331.058)
+stream = ExtResource("2_blvvq")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 317.0
+offset_top = 287.111
+offset_right = 317.0
+offset_bottom = 287.111
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.294643, 0.118042)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.0
+offset_top = -8.0
+offset_right = 58.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "WATCH THE VIDEO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kctw6"),
+&"ButtonVideo.animations": ExtResource("1_w1tsx")
+}
+autoplay = "ButtonVideo.animations/hover_start"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 492.0
+offset_top = 326.986
+offset_right = 532.0
+offset_bottom = 349.986
+scale = Vector2(0.153832, 1)
+text = "-"
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
